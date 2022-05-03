@@ -1,7 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Alert, TouchableOpacityBase, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, Alert, TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
+
 import ElsaChateada from './assets/ElsaChateada.jpg';
+import Card from './compoment/card';
+import styles from './compoment/card/styles';
 
 const App = () => {
 
@@ -9,13 +12,13 @@ const App = () => {
     switch(redes_social){
       
       case 'linkedin': 
-        Alert.alert("https://www.linkedin.com/in/ramondevbr14/")
+        Alert.alert('https://www.linkedin.com/in/ramondevbr14/')
         break
       case 'github': 
-        Alert.alert("https://github.com/ramonbr14")
+        Alert.alert('https://github.com/ramonbr14')
         break
       case 'twitter': 
-        Alert.alert("https://twitter.com/RainhaElsa")
+        Alert.alert('https://twitter.com/RainhaElsa')
         break
     }
   }
@@ -35,98 +38,24 @@ return (
               <AntDesign name="twitter" size={50} color="blue" />
             </TouchableOpacity>
             <TouchableOpacity onPress={() => handleRedeSocial('linkedin')}>
-              <AntDesign name="linkedin-square" size={50} color="darkblue" /></TouchableOpacity>
-          </View>
-        </View>
-        <View style={styles.card_container}> 
-          <View style={styles.card}>
-            <View style={styles.card_header}>
-              <Text style={styles.card_conteiner_text}>EXPERIÊNCIA PROFISSIONAL</Text>
-            </View>
-            <View style={styles.card_content}>
-              <Text style={styles.card_conteiner_text}>Experiência em ser rainha</Text>
-              <Text style={styles.card_conteiner_text}>95% de aprovação popular</Text>
-              <Text style={styles.card_conteiner_text}>Experiência em Magia elementar</Text>
-            </View>
+              <AntDesign name="linkedin-square" size={50} color="darkblue" />
+            </TouchableOpacity>
           </View>
         </View>
 
-        <View style={styles.card_container}> 
-          <View style={styles.card}>
-            <View style={styles.card_header}>
-              <Text style={styles.card_conteiner_text}>FORMAÇÃO ACADEMICA</Text>
-            </View>
-            <View style={styles.card_content}>
-              <Text style={styles.card_conteiner_text}>Escola da Coroa de Arendelle</Text>
-              <Text style={styles.card_conteiner_text}>Pontificia Universidade Catolica de Arendelle</Text>
-              <Text style={styles.card_conteiner_text}>Escola Superior de Magia elementar</Text>
-            </View>
-          </View>
-        </View>  
+        <Card titulo="Formação Academica">
+          <Text style={styles.card_conteiner_text}>Escola da Coroa de Arendelle</Text>
+          <Text style={styles.card_conteiner_text}>Pontificia Universidade Catolica de Arendelle</Text>
+          <Text style={styles.card_conteiner_text}>Escola Superior de Magia elementar</Text>
+        </Card>
+        <Card titulo="Experiencia Profissional">
+          <Text style={styles.card_conteiner_text}>Experiência em ser rainha</Text>
+          <Text style={styles.card_conteiner_text}>95% de aprovação popular</Text>
+          <Text style={styles.card_conteiner_text}>Experiência em Magia elementar</Text>
+        </Card>
       </View>
       </>
       );
 };
-
-const styles = StyleSheet.create({
-  
-  page: {
-    backgroundColor: '#a2e0db',
-    flex: 1
-  },
-  foto: {
-    width: 250,
-    height:250,
-    borderRadius: 125
-  },
-  cnt_cabecalho: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 50
-  },
-  nome: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    fontFamily: 'z003',
-    marginTop: 10,
-    marginBottom: 20 
-    },
-    funcao: {
-      fontSize: 20,
-      fontWeight: 'italic',
-      fontFamily: 'Dyuthi',
-      marginBottom: 10,
-      color: '#ff0000'
-    },
-    redes_sociais: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      width: '60%',
-      backgroundColor: 'gold',
-      marginTop: 20
-    },
-    card_container: {
-      width: '100%',
-      justifyContent: 'center',
-      alignItems: 'center ',
-      marginTop: 20
-    },
-    card: {
-      width: '60%',
-      borderRadius: 5,
-      borderWidth: 2,
-      borderColor: 'black',
-      padding: 10, 
-      backgroundColor: 'forestgreen'
-    },
-    
-    card_content_text: {
-      marginTop: 10,
-      color: 'gold'
-      
-    }
-
-  
-});
 
 export default App;
