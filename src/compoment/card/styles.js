@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
 
     card_content_titulo:{
       fontFamily: 'Rachana',
-      fontSize: 15,
+      fontSize: 30,
       fontWeight: 'bold',
     },
 
